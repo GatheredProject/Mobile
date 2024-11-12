@@ -103,7 +103,7 @@ export default function Register() {
                                 </Text> 
                             </TouchableHighlight>
                             <Text style={[styles.TextBody, { alignSelf: 'center'}]} >
-                                Already have an account? <Link href={"/"} style={{ fontWeight: 'bold'}}>Login</Link>
+                                Already have an account? <Link href={"/login"} style={{ fontWeight: 'bold'}}>Login</Link>
                             </Text>
                         </View>
                     </ScrollView>
