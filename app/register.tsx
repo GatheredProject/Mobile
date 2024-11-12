@@ -94,7 +94,7 @@ export default function Register() {
                             
                             <TouchableHighlight 
                                 style={styles.ConnectButton}
-                                onPress={() => console.log('Connect')}
+                                onPress={() => router.push('/confirmEmail')}
                                 underlayColor={'#ffdda1'}
                                 activeOpacity={0.6}
                             >
