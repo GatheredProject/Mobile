@@ -14,19 +14,18 @@ import { Image } from "expo-image";
 import { useWindowDimensions } from 'react-native';
 import { TouchableHighlight } from "react-native";
 import { useState } from "react";
-import { useRouter, Link } from "expo-router";
+import { useRouter } from "expo-router";
 
 
-export default function Login() {
+export default function ForgotPassword() {
 
     const { height, width } = useWindowDimensions();
-    const [ email, setEmail ] = useState<string>("");
-    const [ password, setPassword ] = useState<string>("");
+    const [ email, setEmail ] = useState<string>(""); 
     const router = useRouter();
 
     return (
     <SafeAreaView style={styles.ScreenContainer}>
-        <View style = {[styles.HeaderContainer, { zIndex: 2 }]}>      
+        <View style = {styles.HeaderContainer}>      
             <View style={{flex: 1 }}>
                 <TouchableOpacity onPress={() => router.back()}>
                     <Text style={styles.HeaderButtonText}>Back</Text>
@@ -36,47 +35,38 @@ export default function Login() {
             <View style={{ flex: 1 }} />
         </View>
         <Image 
-            style={{ width: width, height: height/2, position: 'absolute', top: height/7}}
-            source={require('@/assets/images/login/gathered-mobile-login.png')} 
+            style={{ width: width, height: height/2, position: 'absolute', top: height/6}}
+            source={require('@/assets/images/forgotPassword/gathered-mobile-forgotPassword.png')} 
             contentFit='contain'
         />  
-           <View style={{ zIndex: 3 }}>
+           <View>
            <KeyboardAvoidingView style={{ width: '100%'}} behavior="position" keyboardVerticalOffset={100}>
                 <ScrollView scrollEnabled={false}>
                     <View
-                        style={[{ height: height - 100, marginTop: height/2 - 50}, styles.ForegroundContainer ]}>
-                        <Text style={[ styles.TextHeader, { marginBottom: 10}]}>
-                            Login
+                        style={[{ height: height - 100, marginTop: height/3 + 50 }, styles.ForegroundContainer ]}>
+                        <Text style={[ styles.TextHeader, { marginBottom: 25 }]}>
+                            Forgot Password?
                         </Text>
-                        <TextInput 
-                            style={styles.TextInput }
-                            placeholder="Email"
-                            placeholderTextColor={'#023047'}
-                            value={email}
-                            cursorColor={'#023047'}
-                            onChangeText={(text) => setEmail(text)}
-                        />
-                        <TextInput 
-                            style={styles.TextInput }
-                            secureTextEntry
-                            placeholder="Password"
-                            placeholderTextColor={'#023047'}
-                            value={password}
-                            cursorColor={'#023047'}
-                            onChangeText={(text) => setPassword(text)}
-                        />
-                        <Link href="/forgotPassword" style={[ styles.TextBody, { fontWeight: 'bold', alignSelf: 'flex-end', paddingTop: 10}]}>Forgot Password?</Link>
+                        <Text style={ styles.TextBody }>
+                            Forgot your password? Enter your email, and we’ll send you instructions on how to securely reset it.
+                        </Text>
+                            <TextInput 
+                                style={styles.TextInput }
+                                placeholder="example@example.com"
+                                placeholderTextColor={'#023047'}
+                                value={email}
+                                cursorColor={'#023047'}
+                                onChangeText={(text) => setEmail(text)}
+                            />
+                        
                         <TouchableHighlight 
                             style={styles.ConnectButton}
-                            onPress={() => console.log('login')}
+                            onPress={() => router.push("/register")}
                             underlayColor={'#ffdda1'}
                             activeOpacity={0.6}
                         >
-                            <Text style={styles.ConnectButtonText}>Login</Text> 
+                            <Text style={styles.ConnectButtonText}>Send Email</Text> 
                         </TouchableHighlight>
-                        <Text style={[ styles.TextBody, { alignSelf: 'center'}]} >
-                            Don't have an account? <Link href={"/register"} style={{ fontWeight: 'bold'}}>Register</Link>
-                        </Text>
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView> 
@@ -143,7 +133,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 10,
         borderRadius: 10,
-        marginTop: 10,
+        marginTop: 25,
     },
     ConnectButton: {
         backgroundColor: '#ffb703', 
@@ -153,7 +143,7 @@ const styles = StyleSheet.create({
         width: '100%', 
         borderRadius: 10,
         marginBottom: 15,
-        marginTop: 20,
+        marginTop: 30,
     },
     ConnectButtonText: {
         color: '#023047',
