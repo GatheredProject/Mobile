@@ -63,7 +63,7 @@ export default function Domain() {
                         
                         <TouchableHighlight 
                             style={styles.ConnectButton}
-                            onPress={() => console.log('Connect')}
+                            onPress={() => router.push("/register")}
                             underlayColor={'#ffdda1'}
                             activeOpacity={0.6}
                         >
