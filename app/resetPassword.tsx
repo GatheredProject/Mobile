@@ -14,18 +14,19 @@ import { Image } from "expo-image";
 import { useWindowDimensions } from 'react-native';
 import { TouchableHighlight } from "react-native";
 import { useState } from "react";
-import { useRouter } from "expo-router";
+import { useRouter, Link } from "expo-router";
 
 
-export default function ForgotPassword() {
+export default function ResetPassword() {
 
     const { height, width } = useWindowDimensions();
-    const [ email, setEmail ] = useState<string>(""); 
+    const [ password1, setPassword1 ] = useState<string>("");
+    const [ password2, setPassword2 ] = useState<string>("");
     const router = useRouter();
 
     return (
     <SafeAreaView style={styles.ScreenContainer}>
-        <View style = {styles.HeaderContainer}>      
+        <View style = {[styles.HeaderContainer, { zIndex: 2 }]}>      
             <View style={{flex: 1 }}>
                 <TouchableOpacity onPress={() => router.back()}>
                     <Text style={styles.HeaderButtonText}>Back</Text>
@@ -35,37 +36,46 @@ export default function ForgotPassword() {
             <View style={{ flex: 1 }} />
         </View>
         <Image 
-            style={{ width: width, height: height/2, position: 'absolute', top: height/6}}
-            source={require('@/assets/images/forgotPassword/gathered-mobile-forgotPassword.png')} 
+            style={{ width: width, height: height/2, position: 'absolute', top: height/7}}
+            source={require('@/assets/images/resetPassword/gathered-mobile-resetPassword.png')} 
             contentFit='contain'
         />  
-           <View>
+           <View style={{ zIndex: 3 }}>
            <KeyboardAvoidingView style={{ width: '100%'}} behavior="position" keyboardVerticalOffset={100}>
                 <ScrollView scrollEnabled={false}>
                     <View
-                        style={[{ height: height - 100, marginTop: height/2 - 25 }, styles.ForegroundContainer ]}>
-                        <Text style={[ styles.TextHeader, { marginBottom: 25 }]}>
-                            Forgot Password?
+                        style={[{ height: height - 100, marginTop: height/2 - 60}, styles.ForegroundContainer ]}>
+                        <Text style={[ styles.TextHeader, { marginBottom: 10}]}>
+                            Reset Password
                         </Text>
-                        <Text style={ styles.TextBody }>
-                            Forgot your password? Enter your email, and we’ll send you instructions on how to securely reset it.
+                        <Text style={[styles.TextBody, { marginBottom: 10 } ]}>
+                            Create a new password to secure your account. Make sure it's unique and at least 8 characters long.
                         </Text>
-                            <TextInput 
-                                style={styles.TextInput }
-                                placeholder="example@example.com"
-                                placeholderTextColor={'#023047'}
-                                value={email}
-                                cursorColor={'#023047'}
-                                onChangeText={(text) => setEmail(text)}
-                            />
-                        
+                        <TextInput 
+                            secureTextEntry
+                            style={styles.TextInput }
+                            placeholder="Password"
+                            placeholderTextColor={'#023047'}
+                            value={password1}
+                            cursorColor={'#023047'}
+                            onChangeText={(text) => setPassword1(text)}
+                        />
+                        <TextInput 
+                            style={styles.TextInput }
+                            secureTextEntry
+                            placeholder="Confirm Password"
+                            placeholderTextColor={'#023047'}
+                            value={password2}
+                            cursorColor={'#023047'}
+                            onChangeText={(text) => setPassword2(text)}
+                        />
                         <TouchableHighlight 
                             style={styles.ConnectButton}
-                            onPress={() => router.push("/resetPassword")}
+                            onPress={() => console.log('login')}
                             underlayColor={'#ffdda1'}
                             activeOpacity={0.6}
                         >
-                            <Text style={styles.ConnectButtonText}>Send Email</Text> 
+                            <Text style={styles.ConnectButtonText}>Reset Password</Text> 
                         </TouchableHighlight>
                     </View>
                 </ScrollView>
@@ -133,7 +143,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 10,
         borderRadius: 10,
-        marginTop: 25,
+        marginTop: 10,
     },
     ConnectButton: {
         backgroundColor: '#ffb703', 
@@ -143,7 +153,7 @@ const styles = StyleSheet.create({
         width: '100%', 
         borderRadius: 10,
         marginBottom: 15,
-        marginTop: 30,
+        marginTop: 20,
     },
     ConnectButtonText: {
         color: '#023047',
