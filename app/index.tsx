@@ -1,5 +1,5 @@
 import { Text, StyleSheet,   View, TouchableHighlight} from 'react-native';
-import { useNavigation, Link } from 'expo-router';
+import { Link, useRouter} from 'expo-router';
 import { useRef } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Carousel, {  
@@ -39,6 +39,9 @@ export default function Page() {
         }
     ]
 
+
+    const router = useRouter();
+
     return (
         <SafeAreaView style={styles.ScreenContainer}> 
             <View style={styles.HeaderContainer}>
@@ -72,7 +75,7 @@ export default function Page() {
             <View style={styles.Footer}>
             <TouchableHighlight 
                 style={styles.GetStartedButton}
-                onPress={() => console.log('Get Started')}
+                onPress={() => router.push('/domain')}
                 underlayColor={'#ffdda1'}
                 activeOpacity={0.6}
             >
