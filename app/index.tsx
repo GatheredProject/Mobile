@@ -81,7 +81,7 @@ export default function Page() {
             >
                 <Text style={styles.GetStartedButtonText}>Get Started</Text> 
             </TouchableHighlight>
-            <Text style={styles.TextBody} >Don't have an account? <Link href={"/"} style={{ fontWeight: 'bold'}}>Register</Link></Text>
+            <Text style={styles.TextBody} >Don't have an account? <Link href={"/domain"} style={{ fontWeight: 'bold'}}>Register</Link></Text>
         </View>
         </SafeAreaView>
     );

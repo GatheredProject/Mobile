@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "Mobile",
+    "newArchEnabled": true,
     "slug": "gathered-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,7 +28,8 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
