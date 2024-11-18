@@ -19,8 +19,3 @@ jobs:
       
       - name: Run tests
         run: npm test
-
-      - name: Generate coverage badge
-        run: |
-          COVERAGE=$(node -pe "require('./coverage/coverage-summary.json').total.lines.pct")
-          echo "lines: ${COVERAGE}%" > coverage-summary.md
