@@ -14,13 +14,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gatheredproject.gatheredmobile"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.gatheredproject.gatheredmobile"
     },
     "web": {
       "bundler": "metro",
@@ -39,6 +41,12 @@
         "projectId": "3a66356e-4573-4d1e-889f-179ecbc28e9e"
       }
     },
-    "owner": "gatheredproject"
+    "owner": "gatheredproject",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/3a66356e-4573-4d1e-889f-179ecbc28e9e"
+    }
   }
 }
