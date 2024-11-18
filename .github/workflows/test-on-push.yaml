@@ -22,5 +22,5 @@ jobs:
 
       - name: Generate coverage badge
         run: |
-          COVERAGE=$(node -pe "require('./coverage/coverage-final.json').total.lines.pct")
+          COVERAGE=$(node -pe "require('./coverage/coverage-summary.json').total.lines.pct")
           echo "lines: ${COVERAGE}%" > coverage-summary.md
