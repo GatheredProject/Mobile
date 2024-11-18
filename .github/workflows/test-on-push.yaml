@@ -1,6 +1,7 @@
 name: Test Code on Push
 run-name: ${{ github.actor }} is running tests
 on:
+  workflow_dispatch:
   push:
     branches:
       - '*'
