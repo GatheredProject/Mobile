@@ -1,0 +1,26 @@
+name: Test Code on Push
+run-name: ${{ github.actor }} is running tests
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+      - '!dev'
+
+jobs:
+  Test-On-Push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        uses: |
+          npm install
+          npm install -g expo-cli
+      
+      - name: Run tests
+        run: npm test
