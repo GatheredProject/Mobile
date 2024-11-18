@@ -12,7 +12,8 @@
     "lint": "expo lint"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "coverageReporters" : ["json-summary", "text", "lcov" ]
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
