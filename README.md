@@ -8,6 +8,8 @@ Whether you're seeking support or giving thanks, Gathered makes it simple to con
 
 Illustrations by [Vijay Verma](https://blush.design/collections/P0xvW7pB01SwXNHqlchV/allura).
 
+![Coverage](https://img.shields.io/badge/Coverage-<COVERAGE>%25-brightgreen)
+
 <img src="https://github.com/user-attachments/assets/4a15d26f-88d8-46cb-ae41-4cbbfb257662" alt="splash screen" width="25%" />
 <img src="https://github.com/user-attachments/assets/4763e1b8-77ea-4da0-955a-3f1ebd18b332" alt="welcome" width="25%" />
 <img src="https://github.com/user-attachments/assets/598ea388-89bb-4b8e-9ae0-1eb95f65af42" alt="connect to domain" width="25%" />
