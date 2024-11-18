@@ -1,12 +1,6 @@
 name: Test Code on Push
 run-name: ${{ github.actor }} is running tests
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - '*'
-      - '!main'
-      - '!dev'
+on: [ push, workflow_dispatch ]
 
 jobs:
   Test-On-Push:
